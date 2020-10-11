@@ -330,14 +330,33 @@ table {
 
     &:last-child { margin-bottom: 0; }
 
-    .footnote {
+    .footnotes {
         border-spacing: 0;
         margin-bottom: 0;
-        
+        font-size: 16px;
+
+        hr {
+            margin: 10px 0;
+        }
+
         .label + td {
             width: 100%;
         }
     }
+
+  .footnote-ref {
+    > a {
+      margin-left: 3px;
+
+      &:before {
+        content: "[";
+      }
+
+      &:after {
+        content: "]";
+      }
+    }
+  }
 
     .gist {
         tr {
@@ -469,6 +488,23 @@ table {
 .previous-posts-link a {
     display: block;
     padding: 8px 11px;
+}
+
+/* ============================================================ */
+/* Year */
+/* ============================================================ */
+
+.year-stub {
+    border-bottom: 2px solid $secondary;
+    margin: 0;
+    position: relative;
+    &:first-child { padding-top: 0; }
+}
+
+.year-stub-title {
+    display: inline-block;
+    margin: 10;
+    text-transform: none;
 }
 
 /* ============================================================ */
