@@ -12,10 +12,10 @@
         </span>
         {{- end }}
         </span>
-        <span>&#183;</span>
+        <span>&middot;</span>
         <span><time datetime="{{ .Date.Format "2006-01-02" }}" itemprop="datePublished">{{ dateFormat (default "Mon, Jan 2, 2006" .Site.Params.dateFormat) .Date }}</time></span>
         {{ if .Site.Params.readingTime }}
-            <span>&#183;</span>
+            <span>&middot;</span>
             <span>{{ .Site.Params.readingTimeText }} {{ .Page.ReadingTime }} min</span>
         {{ end }}
     </p>
