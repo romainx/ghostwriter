@@ -4,12 +4,19 @@
     {{ partial "intro.html" . }}
 
     <ol class="post-list">
-        {{ $pag := .Paginate .Pages }}
-        {{ range $pag.Pages }}
+        <!-- TODO number of pages -->
+        {{ $pag := .Paginate .Pages 1000 }}
+        {{- range $index, $element := $pag.Pages -}}
+        {{- $thisYear := $element.Date.Format "2006" }}
+        {{- $lastElement := $index | add -1 | index $pag.Pages }}
+        {{- if or (eq $index 0) ( ne ($lastElement.Date.Format "2006") $thisYear ) }}
+        <li class="year-stub">
+            <h1 class="year-stub-title" itemprop="name">{{ $thisYear }}</h1>
+        </li>
+        {{- end }}
             {{ partial "post-stub.html" . }}
-        {{ end }}
+      {{- end -}}
     </ol>
-
     <div class="post-navigation">
         {{ partial "pagination.html" . }}
     </div>
