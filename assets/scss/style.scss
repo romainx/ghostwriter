@@ -323,6 +323,11 @@ table {
 }
 
 .post-content {
+
+    p {
+        text-align: justify;
+    }
+
     a:hover {
         border-bottom: 1px dotted $primary;
         padding: 0 0 2px;
