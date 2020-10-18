@@ -1,5 +1,5 @@
 <!-- TODO: use slice -->
-{{ $style := resources.Get "scss/style.scss" | resources.ToCSS | minify }}
+{{ $style := resources.Get "scss/style.scss" | toCSS | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}">
-{{ $style := resources.Get "scss/syntax.scss" | resources.ToCSS | minify }}
+{{ $style := resources.Get "scss/syntax.scss" | toCSS | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}">

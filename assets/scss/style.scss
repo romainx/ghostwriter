@@ -373,15 +373,16 @@ table {
 .post-footer { margin-top: 5px; }
 
 .post-tags,
+.post-series,
 .share {
     color: #AEADAD;
     font-size: 14px;
-
     span { font-weight: 600; }
 }
 
-.post-tags {
-    float: left;
+.post-tags,
+.post-series {
+    //float: left;
     margin: 3px 0 0;
     a:hover { color: $secondary; }
 }
