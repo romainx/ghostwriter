@@ -1,0 +1,9 @@
+{{ with .Site.RegularPages.Related . | first 3 }}
+<p class="post-tags">
+    <span>See also:</span>
+    {{- range $index, $tag := . -}}
+        {{- if $index -}}, {{ end }}
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    {{- end }}
+</p>
+{{ end }}
