@@ -387,6 +387,12 @@ table {
     a:hover { color: $secondary; }
 }
 
+.post-related {
+    border-top: 6px solid $secondary;
+    margin: 20px 0 0;
+    padding: 20px 0 0;
+}
+
 .share {
     float: right;
 

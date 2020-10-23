@@ -1,9 +1,10 @@
 {{ with .Site.RegularPages.Related . | first 3 }}
-<p class="post-tags">
-    <span>See also:</span>
+<div class="post-related">
+    <h2>A lire ensuite &#x21E2;</h2>
+<ol class="post-list">
     {{- range $index, $tag := . -}}
-        {{- if $index -}}, {{ end }}
-        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        {{ partial "post-stub.html" . }}
     {{- end }}
-</p>
+</ol>
+</div>
 {{ end }}
