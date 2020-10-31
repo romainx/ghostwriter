@@ -1,0 +1,24 @@
+{{ partial "header.html" . }}
+
+{{ $name := .Data.Plural -}}
+{{ $terms := .Data.Terms.ByCount -}}
+
+<div id="post-index" class="container">
+    {{ partial "intro.html" . }}
+    <span class="terms-count"></span>
+    <ol class="post-list">
+        {{ range $key, $value := $terms -}}
+        <li class="post-stub">
+            <a href="{{ $name | relLangURL }}/{{ $value.Term | urlize }}{{ if $.Site.Params.uglyURLs }}.html{{else}}/{{ end }}">
+                <h4 class="post-stub-title">{{ $value.Term | humanize }}</h4>
+                <span class="post-stub-tag">{{ len $value.Pages }}</span>
+            </a>
+        </li>
+        {{ end -}}
+    </ol>
+    <div class="post-navigation">
+        {{ partial "pagination.html" . }}
+    </div>
+</div>
+
+{{ partial "footer.html" . }}
