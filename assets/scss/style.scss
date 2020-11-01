@@ -5,7 +5,10 @@
 $primary: #DCAE1D ;
 $secondary: #303030;
 $background: #FEFEFE;
+$body_font_family: "Open Sans", sans-serif;
+$title_font_family: $body_font_family;
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
 /* ============================================================ */
 /* Base */
 /* ============================================================ */
@@ -15,11 +18,12 @@ html, body { height: 100%; }
 body {
     background: $background;
     color: #424242;
-    font-family: "Open Sans", arial, sans-serif;
+    font-family: $body_font_family;
     font-size: 18px;
 }
 
 h1, h2, h3, h4, h5, h6 {
+    font-family: $title_font_family;
     margin-bottom: 20px;
     text-transform: none;
 }
@@ -60,7 +64,7 @@ blockquote {
     padding: 5px 30px;
 
     p {
-        color: rgb(133, 133, 133);
+        color: #656565;
         display: block;
         font-style: italic;
         margin: 0;
